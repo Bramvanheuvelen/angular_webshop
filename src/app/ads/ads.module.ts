@@ -9,6 +9,11 @@ import { AdItemComponent } from './ad-list/ad-item/ad-item.component';
   imports: [
     CommonModule
   ],
-  declarations: [AdDetailComponent, AdEditComponent, AdListComponent, AdItemComponent]
+  declarations: [
+    AdDetailComponent,
+    AdEditComponent,
+    AdListComponent,
+    AdItemComponent
+  ]
 })
 export class AdsModule { }

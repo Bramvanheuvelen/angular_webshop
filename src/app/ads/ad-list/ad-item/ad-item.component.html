@@ -1,3 +1,19 @@
-<p>
-  ad-item works!
-</p>
+<a
+style="cursor: pointer"
+class="list-group-item clearfix"
+[routerLink]="[index]"
+routerLinkActive="active"
+>
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">Product Title: {{ product.titel }}</h4>
+    <p class="list-group-item-text">Description: {{ product.description }}</p>
+    <p class="list-group-item-text">Price: {{ product.price | currency: 'EUR' }}</p>
+  </div>
+  <span class="pull-left">
+    <img
+    [src]="product.imageUrl"
+    alt="{{ product.titel }}"
+    class="img-responsive"
+    style="max-height: 50px">
+  </span>
+</a>

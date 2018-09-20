@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { AdsModule } from './ads/ads.module';
 import { ShopCartModule } from './shop-cart/shop-cart.module';
 import { DropdownDirective } from './header/dropdown.directive';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DropdownDirective } from './header/dropdown.directive';
     BrowserModule,
     AppRoutingModule,
     AdsModule,
-    ShopCartModule
+    ShopCartModule,
+    HttpModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

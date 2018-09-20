@@ -1,3 +1,8 @@
-<p>
-  ad-list works!
-</p>
+<div class="row">
+    <div class="col-xs-12">
+        <app-ad-item
+        *ngFor="let productEl of products; let i = index"
+        [product]="productEl"
+        [index]="i"></app-ad-item>
+    </div>
+  </div>

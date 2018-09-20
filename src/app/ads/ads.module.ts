@@ -4,6 +4,7 @@ import { AdDetailComponent } from './ad-detail/ad-detail.component';
 import { AdEditComponent } from './ad-edit/ad-edit.component';
 import { AdListComponent } from './ad-list/ad-list.component';
 import { AdItemComponent } from './ad-list/ad-item/ad-item.component';
+import { AdAddComponent } from './ad-add/ad-add.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { AdItemComponent } from './ad-list/ad-item/ad-item.component';
     AdDetailComponent,
     AdEditComponent,
     AdListComponent,
-    AdItemComponent
+    AdItemComponent,
+    AdAddComponent
   ]
 })
 export class AdsModule { }

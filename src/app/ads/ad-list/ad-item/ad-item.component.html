@@ -1,19 +1,17 @@
 <a
-style="cursor: pointer"
+style="margin: 30px"
 class="list-group-item clearfix"
-[routerLink]="[index]"
+[routerLink]="['/ads/detail']"
 routerLinkActive="active"
 >
   <div class="pull-left">
+      <img
+      [src]="product.imageUrl"
+      alt="{{ product.titel }}"
+      class="media"
+      style="max-height: 100px">
     <h4 class="list-group-item-heading">Product Title: {{ product.titel }}</h4>
     <p class="list-group-item-text">Description: {{ product.description }}</p>
     <p class="list-group-item-text">Price: {{ product.price | currency: 'EUR' }}</p>
   </div>
-  <span class="pull-left">
-    <img
-    [src]="product.imageUrl"
-    alt="{{ product.titel }}"
-    class="img-responsive"
-    style="max-height: 50px">
-  </span>
 </a>

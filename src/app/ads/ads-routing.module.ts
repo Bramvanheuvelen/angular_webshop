@@ -8,7 +8,7 @@ import { AdItemComponent } from './ad-list/ad-item/ad-item.component';
 const routes: Routes = [
   { path: 'ads/list', component: AdListComponent },
   { path: 'ads/edit', component: AdEditComponent },
-  { path: 'ads/detail', component: AdDetailComponent },
+  { path: 'ads/list/:id', component: AdDetailComponent },
   { path: 'ads/list/item', component: AdItemComponent },
 
 ]

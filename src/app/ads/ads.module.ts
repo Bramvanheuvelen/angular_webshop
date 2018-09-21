@@ -9,7 +9,7 @@ import { AdsRoutingModule } from './ads-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    AdsRoutingModule
+    AdsRoutingModule,
   ],
   declarations: [
     AdDetailComponent,

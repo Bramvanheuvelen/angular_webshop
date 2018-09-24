@@ -13,15 +13,15 @@ export class AppComponent {
 
   chart = [];
 
-  constructor(private _weather: WeatherService) {}
+  constructor(private weatherHttp: WeatherService) {}
 
   ngOnInit() {
-    this._weather.dailyForecast()
-      .subscribe(res => {
+    this.weatherHttp.dailyForecast()
+      .subscribe(result => {
 
-        let temp_max = res['list'].map(res => res.main.temp_max)
-        let temp_min = res['list'].map(res => res.main.temp_min)
-        let alldates = res['list'].map(res => res.dt)
+        let temp_max = result['list'].map(result => result.main.temp_max)
+        let temp_min = result['list'].map(result => result.main.temp_min)
+        let alldates = result['list'].map(result => result.dt)
 
         let weatherDates = []
         alldates.forEach((res) => {

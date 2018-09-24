@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AdsModule } from './ads/ads.module';
 import { ShopCartModule } from './shop-cart/shop-cart.module';
-import { DropdownDirective } from './header/dropdown.directive';
 import { HttpModule } from '@angular/http';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { FormsModule } from '@angular/forms';
+import { WeatherService } from './weather.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { HttpModule } from '@angular/http';
     AdsModule,
     ShopCartModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

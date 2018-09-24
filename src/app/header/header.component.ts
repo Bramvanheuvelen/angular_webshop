@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -6,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  onNewProduct() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }

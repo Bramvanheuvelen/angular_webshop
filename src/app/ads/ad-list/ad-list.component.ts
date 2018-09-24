@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 
 import { ProductService } from '../products.service'
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./ad-list.component.css']
 })
 export class AdListComponent implements OnInit {
+  productChanged = new Subject<Product[]>();
   products: Product[];
   subcription: Subscription;
 
@@ -26,6 +27,15 @@ export class AdListComponent implements OnInit {
         }
       );
       this.products = this.productService.getProducts();
+    }
+
+    onNewProduct() {
+      this.router.navigate(['new'], {relativeTo: this.route});
+    }
+
+    addProduct(product: Product) {
+      this.products.push(product);
+      this.productChanged.next(this.products.slice());
     }
 
 }

@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-md-4">
+      <button (click)="onNewProduct()">New Product</button>
         <app-ad-item
         *ngFor="let productEl of products; let i = index"
         [product]="productEl"

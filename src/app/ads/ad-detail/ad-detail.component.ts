@@ -24,4 +24,8 @@ export class AdDetailComponent implements OnInit {
       )
   }
 
+  addToBasket(products: Product[]) {
+    this.productService.addProduct(this.product)
+  }
+
 }

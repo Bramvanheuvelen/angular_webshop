@@ -1,3 +1,77 @@
-<p>
-  ad-edit works!
-</p>
+<div class="row">
+    <div class="col-xm-4">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="imageUrl">Image URL</label>
+                  <input
+                    type="text"
+                    id="imageUrl"
+                    formControlName="imageUrl"
+                    class="form-control"
+                    #imageUrl>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <img
+                [src]="imageUrl.value"
+                class="img-responsive"
+                style="max-height: 50px">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="titel">Titel</label>
+                <input
+                  type="text"
+                  id="titel"
+                  formControlName="titel"
+                  class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="description">Description</label>
+                <textarea
+                  type="text"
+                  id="description"
+                  formControlName="description"
+                  class="form-control"
+                  rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="price">Price</label>
+                  <input
+                    type="number"
+                    id="price"
+                    formControlName="price"
+                    class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                <button
+                  type="submit"
+                  class="btn btn-success"
+                  [disabled]="!productForm.valid"
+                  >Save</button>
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                  (click)="onCancel()">Cancel</button>
+              </div>
+            </div>
+      </form>
+    </div>
+  </div>

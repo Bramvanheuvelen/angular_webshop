@@ -10,13 +10,15 @@ import { ShopCartModule } from './shop-cart/shop-cart.module';
 import { HttpModule } from '@angular/http';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { FormsModule } from '@angular/forms';
-import { WeatherService } from './weather.service';
+import { WeatherService } from './weather/weather.service';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

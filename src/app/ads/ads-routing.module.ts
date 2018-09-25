@@ -9,11 +9,11 @@ import { AdStartComponent } from './ad-start/ad-start.component';
 const routes: Routes = [
   { path: '', component: AdStartComponent },
   { path: 'ads/list', component: AdListComponent },
+  { path: 'ads/list/item', component: AdItemComponent },
   { path: 'ads/edit', component: AdEditComponent },
   { path: 'ads/list/new', component: AdEditComponent },
   { path: 'ads/list/:id', component: AdDetailComponent },
   { path: 'ads/list/:id/edit', component: AdEditComponent },
-  { path: 'ads/list/item', component: AdItemComponent },
 
 ]
 

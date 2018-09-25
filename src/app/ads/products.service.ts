@@ -28,6 +28,11 @@ export class ProductService {
 
 constructor(private productService: ProductService) { }
 
+setProducts(products: Product[]) {
+  this.products = products;
+  this.productChanged.next(this.products.slice())
+}
+
 getProducts() {
   return this.products.slice();
 }
@@ -47,7 +52,7 @@ updateProduct(index: number, newProduct: Product) {
 }
 
 addProductToList(product: ProductsList) {
-  this.products.push(product);
+  this.productsList.push(product);
   this.productChanged.next(this.products.slice());
 }
 
@@ -55,4 +60,12 @@ addProductToShoppingList(productsList: ProductsList) {
   this.addProductToList(productsList);
 }
 
+deleteProduct(index: number) {
+  this.products.splice(index, 1);
+  this.productChanged.next(this.products.slice());
+}
+
+getProductsList() {
+  return this.productsList.slice();
+}
 }

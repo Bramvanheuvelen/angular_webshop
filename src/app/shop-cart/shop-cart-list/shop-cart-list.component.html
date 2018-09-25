@@ -1,3 +1,19 @@
-<p>
-  shop-cart-list works!
-</p>
+<div class="row" style="margin-left: 30px">
+  <h2>Shopping Card</h2>
+    <div class="row-xs-10">
+      <hr>
+      <ul class="list-group">
+        <a class="list-group-item" style="cursor: pointer"
+        *ngFor="let product of productsList; let i = index"
+        >
+        <img
+      [src]="product.imageUrl"
+      alt="{{ product.titel }}"
+      class="img-responsive"
+      style="max-height: 100px;">
+        {{ product.titel }}
+        {{ product.price | currency:"EUR"}}
+      </a>
+      </ul>
+    </div>
+  </div>

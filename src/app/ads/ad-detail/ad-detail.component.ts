@@ -35,4 +35,9 @@ export class AdDetailComponent implements OnInit {
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
+  onDeleteProduct() {
+    this.productService.deleteProduct(this.id);
+    this.router.navigate(['/ads/list']);
+  }
+
 }

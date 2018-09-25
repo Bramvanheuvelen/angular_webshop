@@ -18,13 +18,7 @@ export class AdItemComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id= +params['id'];
-          this.product = this.productService.getProduct(this.id)
-        }
-      )
+
   }
 
   toShoppingCart() {

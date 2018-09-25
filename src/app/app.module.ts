@@ -9,15 +9,15 @@ import { AdsModule } from './ads/ads.module';
 import { ShopCartModule } from './shop-cart/shop-cart.module';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { WeatherService } from './weather/weather.service';
-import { WeatherComponent } from './weather/weather.component';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+import { DataStorageService } from './shared/data-storage.service';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    WeatherComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +27,10 @@ import { SharedModule } from './shared/shared.module';
     HttpModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    AuthModule
   ],
-  providers: [WeatherService],
+  providers: [DataStorageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

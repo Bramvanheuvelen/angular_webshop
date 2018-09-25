@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -7,11 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webshop-homework';
-
-  constructor() {}
+  loadedFeature = 'product';
 
   ngOnInit() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyDuxycaocq3je0fq0oHMsWXmTwU-98tGKo",
+    authDomain: "webshop-angular.firebaseapp.com",
+    });
+  }
 
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
   }
 }

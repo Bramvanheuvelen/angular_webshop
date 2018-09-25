@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { DataStorageService } from '../shared/data-storage.service'
+import { AuthService } from '../auth/auth.service';
 
 
 @Component({
@@ -8,14 +9,24 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private router: Router,
-              private route: ActivatedRoute) { }
+  constructor(
+            private dataStorageService: DataStorageService,
+            private authService: AuthService) { }
 
-  ngOnInit() {
+  onSaveData() {
+      this.dataStorageService.storeProducts()
+      .subscribe(
+        (response: Response) => {
+          console.log(response);
+        }
+      );
   }
 
-  onNewProduct() {
-    this.router.navigate(['new'], {relativeTo: this.route});
+  onFetchData() {
+    this.dataStorageService.getRecipes();
   }
 
+  onLogout() {
+    this.authService.logout();
+  }
 }

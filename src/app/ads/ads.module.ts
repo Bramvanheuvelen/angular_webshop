@@ -7,13 +7,15 @@ import { AdItemComponent } from './ad-list/ad-item/ad-item.component';
 import { AdsRoutingModule } from './ads-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdStartComponent } from './ad-start/ad-start.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     AdsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   declarations: [
     AdDetailComponent,

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
 import { Subject } from 'rxjs';
+import { ProductsList } from '../shop-cart/shopcartlist.model'
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,9 @@ export class ProductService {
     )
   ]
 
-// constructor() { }
+  private productsList: ProductsList[] = []
+
+constructor(private productService: ProductService) { }
 
 getProducts() {
   return this.products.slice();
@@ -41,6 +44,15 @@ addProduct(product: Product) {
 updateProduct(index: number, newProduct: Product) {
   this.products[index] = newProduct;
   this.productChanged.next(this.products.slice());
+}
+
+addProductToList(product: ProductsList) {
+  this.products.push(product);
+  this.productChanged.next(this.products.slice());
+}
+
+addProductToShoppingList(productsList: ProductsList) {
+  this.addProductToList(productsList);
 }
 
 }

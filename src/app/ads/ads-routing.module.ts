@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'ads/edit', component: AdEditComponent },
   { path: 'ads/list/new', component: AdEditComponent },
   { path: 'ads/list/:id', component: AdDetailComponent },
+  { path: 'ads/list/:id/edit', component: AdEditComponent },
   { path: 'ads/list/item', component: AdItemComponent },
 
 ]

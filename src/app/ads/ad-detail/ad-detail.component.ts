@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../products.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ad-detail',
@@ -11,8 +11,10 @@ export class AdDetailComponent implements OnInit {
   product: Product;
   id: number;
 
-  constructor(private productService: ProductService,
-              private route: ActivatedRoute) { }
+  constructor(
+            private productService: ProductService,
+            private route: ActivatedRoute,
+            private router: Router) { }
 
   ngOnInit() {
     this.route.params
@@ -25,7 +27,12 @@ export class AdDetailComponent implements OnInit {
   }
 
   addToBasket(products: Product[]) {
-    this.productService.addProduct(this.product)
+    this.productService.addProductToList(this.product)
+  }
+
+  onEditProduct() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
 }

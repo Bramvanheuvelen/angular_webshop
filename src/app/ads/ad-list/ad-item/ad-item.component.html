@@ -1,18 +1,22 @@
-<a
-style="margin: 30px"
-class="list-group-item clearfix"
-[routerLink]="[index]"
-routerLinkActive="active"
->
-  <div class="pull-left">
-      <img
-      [src]="product.imageUrl"
-      alt="{{ product.titel }}"
-      class="media"
-      style="max-height: 100px">
-    <h4 class="list-group-item-heading">Product: {{ product.titel }}</h4>
-    <p class="list-group-item-text">Description: {{ product.description }}</p>
-    <p class="list-group-item-text">Price: {{ product.price | currency: 'EUR' }}</p>
-    <button class="btn btn-success">Add to basket</button>
-  </div>
-</a>
+<div class="row" style="min-width: 150px;">
+    <div style="margin: 30px"
+    class="list-group-item clearfix">
+        <a
+        style="color: black"
+        [routerLink]="[index]"
+        routerLinkActive="active"
+        >
+        <img
+        [src]="product.imageUrl"
+        alt="{{ product.titel }}"
+        class="media"
+        style="max-height: 100px">
+        <div style="max-width: 200px;">
+          <h4 class="list-group-item-heading">Product: {{ product.titel }}</h4>
+          <p class="list-group-item-text">Description: {{ product.description }}</p>
+          <p class="list-group-item-text">Price: {{ product.price | currency: 'EUR' }}</p>
+        </div>
+    </a>
+    <button class="btn btn-success" (click)="toShoppingCart()">Add to basket</button>
+    </div>
+</div>

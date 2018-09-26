@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { DataStorageService } from './shared/data-storage.service';
 import { AuthService } from './auth/auth.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthService } from './auth/auth.service';
     HttpClientModule,
     FormsModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    NgbModule
   ],
   providers: [DataStorageService, AuthService],
   bootstrap: [AppComponent]

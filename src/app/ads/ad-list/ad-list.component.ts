@@ -4,6 +4,7 @@ import { Product } from '../product.model';
 import { ProductService } from '../products.service'
 import { Subscription, Subject } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-ad-list',
@@ -17,7 +18,8 @@ export class AdListComponent implements OnInit {
 
   constructor(private productService: ProductService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.subcription = this.productService.productChanged

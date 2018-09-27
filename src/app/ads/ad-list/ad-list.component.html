@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-4">
-      <button *ngIf="authService.isAuthenticated()" type="button" class="btn btn-primary" (click)="onNewProduct()" style="margin-top: 3rem; margin-left: 3rem; margin-bottom: 3rem">New Product</button>
+      <button *ngIf="authService.isAuthenticated()" type="button" class="btn btn-primary" (click)="onNewProduct()" style="margin-bottom: 3rem">New Product</button>
         <app-ad-item
         *ngFor="let productEl of products; let i = index"
         [product]="productEl"

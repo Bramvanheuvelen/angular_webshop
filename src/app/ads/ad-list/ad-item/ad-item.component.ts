@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../product.model';
 import { ProductService } from '../../products.service';
-import { Params } from '@angular/router';
 
 @Component({
   selector: 'app-ad-item',

@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-light">
+<!-- <nav class="navbar fixed-top navbar-expand-lg bg-light">
     <div class="navbar-header">
       <a style="cursor: pointer;" routerLink="/" class="navbar-brand">My first webshop</a>
     </div>
@@ -22,4 +22,28 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
+
+  <nav class="navbar navbar-dark bg-dark mb-5">
+      <a style="cursor: pointer" class="navbar-brand" routerLink="/">My first webshop</a>
+      <div class="navbar-expand mr-auto">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Home</a>
+          <a class="nav-item nav-link" href="#">About</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+        </div>
+      </div>
+      <div class="navbar-expand ml-auto navbar-nav">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" [routerLink]="['/shoppingcart']">
+            <i class="fa fa-shopping-cart"></i>
+          </a>
+          <a class="nav-item nav-link" href=# target="_blank">
+            <i class="fa fa-sign-in"></i>
+          </a>
+          <a class="nav-item nav-link" href=# target="_blank">
+            <i class="fa fa-medium"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
